@@ -14,6 +14,7 @@ body {
     align-items: center;
     background: linear-gradient(135deg, #f9f9f9, #e8f8e8);
     transition: background-color 0.5s ease-in-out;
+    padding: 20px;
 }
 
 h1 {
@@ -24,7 +25,8 @@ h1 {
 }
 
 #container {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -43,6 +45,8 @@ h1 {
 .feeling {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 10px; 
 }
 
 .box {
@@ -68,7 +72,6 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-
 .box:hover img {
     transform: scale(1.2);
 }
@@ -87,7 +90,6 @@ h1 {
 }
 
 .box.active {
-    /* background-color: #8fbc8f; */
     transform: scale(1.15);
     box-shadow: 0px 6px 5px rgba(0, 128, 0, 0.4);
 }
@@ -110,14 +112,13 @@ button#btn {
 }
 
 button#btn:hover {
-    transform: translateY(-3px);  
+    transform: translateY(-3px);
     background: linear-gradient(135deg, #5e7f5e, #7eac7e);
 }
 
 button#btn:active {
     transform: translateY(1px);
 }
-
 
 @keyframes fadeIn {
     from {
@@ -127,5 +128,32 @@ button#btn:active {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .feeling {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .box {
+        width: 80px;
+        height: 80px;
+    }
+
+    .box img {
+        width: 40px;
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    button#btn {
+        font-size: 0.9rem;
     }
 }
